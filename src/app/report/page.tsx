@@ -12,13 +12,12 @@ export default async function ReportPage() {
 
   return (
     <div className={style.grid}>
+
       <header className={`light-bg ${style.header}`}>
         <div> 
           <h2>{report.model.name} (version {report.model.version})</h2>
-
-          <p>Date: {report.createdAt.toLocaleDateString()}</p> 
-          <p>Level: {report.level}</p>
-
+          <p><span>Date:</span> {report.createdAt.toLocaleDateString()}</p> 
+          <p><span>Level: </span>{report.level}</p>
         </div>
 
         <div> 
@@ -27,22 +26,14 @@ export default async function ReportPage() {
           labels={report.metrics.map((metric)=>{return metric.name})}/>
         </div>
       </header>
+
       <div className={`light-bg ${style.chartsBox}`}>
         <h2>Metrics</h2>
         <Polar series={report.metrics.map((metric)=>{return metric.value*100})} labels={report.metrics.map((metric)=>{return metric.name + ' ' +metric.value*100 + ' / 100'})}/>
-        {/* <ul>
-          {report.metrics.map((metric) => (
-            <li key={metric.id}>
-              {metric.name}: {metric.value}
-            </li>
-          ))}
-        </ul> */}
       </div>
 
-
-
       <div className={`light-bg ${style.issuesBox}`}>
-      <h2>Issues</h2>
+        <h2>Issues</h2>
         <ReportIssues issues={report.issues} categories={categories}/>
       </div>
     </div>

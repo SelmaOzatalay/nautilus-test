@@ -21,6 +21,7 @@ export default function ReportIssues({issues, categories}:IssuesProps) {
       );
       return {
         ...category,
+        name: category.name + ' (' + categoryIssues.length + ')',
         issues: categoryIssues,
       };
     });

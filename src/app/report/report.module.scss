@@ -13,11 +13,18 @@
 
 .header {
     display: flex;
-}
-
-.header {
     grid-column: 1;
     grid-row: 1;
+    h2 {
+        font-size: 30px;
+    }
+    p {
+        margin-top: 10px;
+        span {
+            font-weight: 600;
+            font-size: 12px;
+        }
+    }
 }
   
 .chartsBox {
