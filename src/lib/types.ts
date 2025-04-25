@@ -37,3 +37,8 @@ export type IssueCategory = {
   name: string;
   description: string;
 };
+
+export type Level = {
+  value: number;
+  name: string;
+}

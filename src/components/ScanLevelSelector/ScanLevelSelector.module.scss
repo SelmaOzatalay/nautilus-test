@@ -1,0 +1,31 @@
+.scanLevelSelectorButtons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: calc(100% - 46px);
+}
+
+.levelButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% / 3 - (20px * 2) / 3);
+    width: 100%;
+    border: 1px solid rgba(var(--color-giskard-rgb), $alpha: 0.2);
+    border-radius: 12px;
+    background: rgba($color: #fff, $alpha: 0.03);
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    &:hover {
+        background: rgba($color: #fff, $alpha: 0.1);
+    }
+    &.selected {
+        // background: var(--color-giskard-dark);
+        background: rgba($color: #000000, $alpha: 0.3);
+        border: 1px solid rgba(var(--color-giskard-rgb), $alpha: 0.5);
+        // color: #000;
+    }
+}

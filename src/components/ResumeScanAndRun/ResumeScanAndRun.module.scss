@@ -1,0 +1,42 @@
+.resumeScanAndRun {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 14px;
+    :global(.button) {
+        width: 100%;
+        margin-top: var(--padding-main);
+        font-size: 16px;
+    }
+    :global(.button:not(.disabled)) {
+      animation: neonPulse 2s ease-in-out infinite;
+    }
+    .content {
+        font-size: 12px;
+        p, ul {
+            margin-bottom: var(--padding-main);
+        }
+        ul {
+            padding-left: 40px;
+        }
+    }
+}
+
+  
+  @keyframes neonPulse {
+    0%, 100% {
+      box-shadow:
+        0 0 5px rgba(var(--color-giskard-rgb), 0),
+        0 0 10px rgba(var(--color-giskard-rgb), 0),
+        0 0 20px rgba(var(--color-giskard-rgb), 0),
+        0 0 40px rgba(var(--color-giskard-rgb), 0);
+    }
+    50% {
+      box-shadow:
+        0 0 10px rgba(var(--color-giskard-rgb), 0.3),
+        0 0 20px rgba(var(--color-giskard-rgb), 0.3),
+        0 0 40px rgba(var(--color-giskard-rgb), 0.3),
+        0 0 60px rgba(var(--color-giskard-rgb), 0.3);
+    }
+  }
+  

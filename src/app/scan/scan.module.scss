@@ -1,0 +1,34 @@
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-gap: var(--padding-main);
+    height: calc(100% - var(--size-header));
+    padding: var(--padding-main);
+    :global(.light-bg) {
+        height: 100%;
+        h2 {
+            margin-bottom: var(--padding-main);
+        }
+    }
+}
+
+.modelBox {
+    grid-column: 1;
+    grid-row: 1;
+}
+  
+.levelBox {
+    grid-column: 1;
+    grid-row: 2;
+}
+  
+.categoriesBox {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+}
+
+.resultBox {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+}

@@ -1,0 +1,72 @@
+.tabsContainer {
+  height: calc(100% - 46px);
+}
+
+.tabList {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  .scrollWrapper {
+    display: flex;
+  }
+  
+  .tabButton {
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: normal;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease-in-out;
+    color: #fff;
+    font-size: 11px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  
+  .tabButton:hover {
+    background: rgba($color: #000, $alpha: 0.2);
+    color: var(--color-giskard);
+  }
+  
+  .tabButtonActive {
+    background: rgba($color: #000, $alpha: 0.2);
+    border-bottom: 2px solid rgba(var(--color-giskard-rgb), 0.6);
+    font-weight: bold;
+    // color: #000;
+  }
+  
+  .tabContent {
+    height: calc(100% - 46px);
+    overflow-y: auto;
+    padding: var(--padding-main);
+    background: rgba($color: #000, $alpha: 0.2);
+    li {
+      background: rgba($color: #000, $alpha: 0.3);
+      padding: var(--padding-main);
+      border-radius: 4px;
+      list-style: none;
+      li + li {
+        margin: 0;
+        padding-top: 0;
+      } 
+      h3 {
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      li:first-child h4 {
+        margin-top: 0;
+      }
+    }
+
+    :global(.description) {
+      font-size: 11px;
+    }
+    h4 {
+      margin-top: 10px;
+    }
+
+  }
+  
