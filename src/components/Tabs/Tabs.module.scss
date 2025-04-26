@@ -1,5 +1,5 @@
 .tabsContainer {
-  height: calc(100% - 46px);
+  height: calc(100% - 60px);
 }
 
 .tabList {
@@ -26,12 +26,12 @@
   }
   
   .tabButton:hover {
-    background: rgba($color: #000, $alpha: 0.2);
+    background: rgba($color: #000, $alpha: 0.8);
     color: var(--color-giskard);
   }
   
   .tabButtonActive {
-    background: rgba($color: #000, $alpha: 0.2);
+    background: rgba($color: #000, $alpha: 0.3);
     border-bottom: 2px solid rgba(var(--color-giskard-rgb), 0.6);
     font-weight: bold;
     // color: #000;
@@ -41,18 +41,21 @@
     height: calc(100% - 46px);
     overflow-y: auto;
     padding: var(--padding-main);
-    background: rgba($color: #000, $alpha: 0.2);
+    background: rgba($color: #000, $alpha: 0.3);
     li {
-      background: rgba($color: #000, $alpha: 0.3);
-      padding: var(--padding-main);
+      padding: 0;
       border-radius: 4px;
       list-style: none;
-      li + li {
-        margin: 0;
-        padding-top: 0;
-      } 
+      li {
+        background: rgba($color: #000, $alpha: 0.3);
+        padding: var(--padding-main);
+        + li {
+          margin: 0;
+          padding-top: 0;
+        } 
+      }
       h3 {
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 700;
         margin-bottom: 10px;
       }

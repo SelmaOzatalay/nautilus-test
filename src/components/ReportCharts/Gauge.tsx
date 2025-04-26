@@ -18,10 +18,22 @@ const Gauge: React.FC<GaugeChartProps> = ({ series, labels }) => {
     const gaugeOptions: ApexOptions = {
         
             chart: {
-              height: 350,
               type: 'radialBar',
-              offsetY: -10
+              offsetY: -20,   
+              offsetX: 0,    
+              sparkline: {
+                enabled: true,
+              },
             },
+            grid: {
+              padding: {
+                top: 0,
+                bottom: 20,
+                left: 0,
+                right: 0,
+              }
+            },
+            
             plotOptions: {
               radialBar: {
                 startAngle: -135,
@@ -32,12 +44,12 @@ const Gauge: React.FC<GaugeChartProps> = ({ series, labels }) => {
                 dataLabels: {
                   name: {
                     show: true,
-                    fontSize: '16px',
+                    fontSize: '12px',
                     color: '#91F7C0',
-                    offsetY: 120
+                    offsetY: 0
                   },
                   value: {
-                    offsetY: 76,
+                    offsetY: 0,
                     fontSize: '16px',
                     color: '#fff',
                     formatter: function (val) {
@@ -59,7 +71,7 @@ const Gauge: React.FC<GaugeChartProps> = ({ series, labels }) => {
               },
             },
             stroke: {
-              dashArray: 4
+              dashArray: 1
             },
             labels: ['Global Score'],
             colors: ['#91F7C0'],
@@ -71,7 +83,8 @@ const Gauge: React.FC<GaugeChartProps> = ({ series, labels }) => {
     useEffect(() => {
         const total = series.reduce((acc, val) => acc + val, 0);
         const percentageSeries =  (total / (series.length * 100)) * 100;
-        setSeriesTotal(percentageSeries);
+        const cutNum = Math.floor(percentageSeries * 1000) / 1000;
+        setSeriesTotal(cutNum);
         console.log('seriesTotal', percentageSeries);
     },[labels, series]);
 
